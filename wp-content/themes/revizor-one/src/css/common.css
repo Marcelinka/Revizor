@@ -1,0 +1,182 @@
+/* Обнуление */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+  display: inline-block;
+}
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* hidden */
+.hidden {
+	display: none;
+}
+@media(--ph) {
+	.hidden_phones {
+		display: inline-block;
+	}
+}
+
+/* Убираем скролл с body, когда открывается модальное окно */
+body.scroll-locked {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Общий стиль кнопок */
+.btn {
+	font-size: .95rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 1.2em 1.7em 1.15em;
+	border-radius: 24px;
+	border: 2px solid var(--yellow);
+	background: white;
+	transition: all .4s;
+	letter-spacing: .5px;
+}
+.btn:hover {
+	background: var(--yellow);
+	cursor: pointer;
+}
+@media(--ph) {
+	.btn {
+		font-size: 1.4rem;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 40px;
+	}
+}
+
+/* Типографика */
+html {
+	font-size: 12px;
+}
+body {
+	font-family: GothamPro;
+	font-size: 1.1rem;
+	color: var(--black);
+}
+h1 {
+	font-weight: bold;
+	font-size: 4rem;
+}
+h2 {
+	font-size: 2.1rem;
+	font-weight: bold;
+	margin-bottom: .96em;
+	margin-top: .7em;
+}
+h3 {
+	font-size: 1.9rem;
+	font-weight: bold;
+}
+@media(--ixs) {
+	h1 {
+		font-size: 3.5rem;
+	}
+	h2 {
+		font-size: 1.8rem;
+	}
+}
+
+
+/* Ограничение контента по ширине */
+.container {
+	width: 1200px;
+	margin: auto;
+}
+@media(--md) {
+	.container {
+		width: 900px;
+	}
+}
+@media(--sm) {
+	.container {
+		width: 100%;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+/* Поворот заголовка и позиционирование */
+.title-in-top {
+	position: relative;
+}
+.title-in-top h1 {
+	position: absolute;
+	transform: rotate(-90deg);
+	top: -1.3em;
+}
+.title-in-top h1:before {
+	content: '';
+	position: absolute;
+	left: -.5em;
+	width: 1em;
+	height: .13em;
+	background: var(--black);
+}
+@media(--ph) {
+	.title-in-top h1 {
+		transform: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+	}
+	.title-in-top h1:before {
+		width: 0;
+		height: 0;
+	}
+}
+
+/* Изображение в 100% */
+.all-image {
+	width: 100%;
+}
+
+/* Серая граница снизу */
+.grey-border-bottom {
+	border-bottom: 0.5px solid var(--light-grey);
+}
+
+/* Анимации */
+@keyframes overlayReveal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: .9;
+	}
+}
+@keyframes modalReveal {
+	from {
+		transform: translate(0,100%);
+	}
+	to {
+		transform: translate(0,0);
+	}
+}
+@keyframes postReveal {
+	from {
+		opacity: 0;
+		transform: translate(0,20%);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0,0);
+	}
+}

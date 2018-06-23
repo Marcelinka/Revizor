@@ -1,0 +1,102 @@
+.wpcf7-response-output,
+.wpcf7-not-valid-tip,
+.ajax-loader {
+	display: none !important;
+}
+
+.back-call-modal {
+	position: fixed;
+	z-index: 13;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.back-call-modal__overlay {
+	background: var(--yellow);
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	animation-name: 'overlayReveal';
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+}
+.back-call-modal__content {
+	height: 100%;
+	width: 100%;
+	lost-flex-container: row;
+	justify-content: center;
+	align-items: center;
+
+}
+.back-call-modal__wrapper {
+	position: relative;
+	padding: 70px 120px;
+	background: white;
+	z-index: 14;
+	lost-flex-container: column;
+	align-items: center;
+	animation-name: 'modalReveal';
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+}
+.back-call-modal__button {
+	width: 2.5rem;
+	position: absolute;
+	top: 1.5rem;
+	right: 2.5rem;
+}
+.back-call-modal__button svg {
+	width: 100%;
+}
+.back-call-modal__button path {
+	fill: var(--black);
+}
+.back-call-modal .wpcf7-form {
+	lost-flex-container: column;
+	align-items: center;
+}
+.back-call-modal .form__label {
+	font-size: 1.75rem;
+}
+.back-call-modal .form__input {
+	width: 60rem;
+	border-radius: 1rem;
+	border: 1px solid var(--light-grey);
+	padding: 1rem;
+	margin-top: 2rem;
+}
+.back-call-modal .btn {
+	margin-top: 4rem;
+}
+.back-call-modal .wpcf7-not-valid {
+	border-color: red;
+}
+
+@media(--sm) {
+	.back-call-modal__wrapper {
+		width: 80%;
+	}
+	.back-call-modal .form__input {
+		width: 100%;
+	}
+}
+
+@media(--ph) {
+	.back-call-modal__overlay {
+		display: none;
+	}
+	.back-call-modal__wrapper {
+		width: 100%;
+		height: 100%;
+		padding: 2rem;
+		justify-content: center;
+	}
+	.back-call-modal__button {
+		top: 2rem;
+		right: 2rem;
+	}
+}
